@@ -3,7 +3,133 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Movies Super-Advanced</title>
 	</head>
-	<body></body>
+	<body>
+		<!-- =================================
+      Header
+      ================================= -->
+		<header>
+			<div class="container">
+				<!-- Movies Heading -->
+				<h1 class="movies__heading text-center my-4 text-info">
+					Movies.uz
+				</h1>
+			</div>
+		</header>
+
+		<!-- =================================
+      Main
+      ================================= -->
+		<main>
+			<div class="container">
+				<!-- Movies main wrapper -->
+				<div class="movies__main-wrapper row mb-4">
+					<!-- Movies left -->
+					<div class="movies__left-wrapper col-6">
+						<!-- Form search -->
+						<form
+							class="movies__form-search js-movies__form-search"
+							action="https://echo.htmlacademy.ru/"
+							method="GET"
+							autocomplete="off"
+						>
+							<div class="form-group">
+								<label for="search_movie">Search movies</label>
+								<input
+									class="movies__form-input form-control js-movies__form-input"
+									type="search"
+									placeholder="Enter movie title"
+									id="search_movie"
+									name="user_search-movie"
+								/>
+							</div>
+						</form>
+
+						<!-- Movie title results -->
+						<ul
+							class="movies__list-title list-group list-unstyled js-movies__list-title"
+						></ul>
+					</div>
+
+					<!-- Movies right -->
+
+					<div class="movies__right-wrapper col-6"></div>
+					<!-- movies__right-wrapper -->
+				</div>
+
+				<!-- Pagination list -->
+				<nav aria-label="Page navigation example">
+					<ul
+						class="pagination flex-wrap justify-content-center js-pagination"
+					></ul>
+				</nav>
+			</div>
+		</main>
+
+		<!-- ===============================
+      Templates
+      =============================== -->
+
+		<!-- Movies title item template -->
+		<template class="movies__title-item-template">
+			<li
+				class="movies__title-item list-group-item d-flex align-items-center justify-content-between"
+			>
+				<span class="movies__title-text">Iron man</span>
+
+				<button class="movies__info-btn btn btn-info" type="button">
+					Info
+				</button>
+			</li>
+		</template>
+
+		<!-- Movie info template -->
+		<template class="movie__info-template">
+			<div class="movie d-flex">
+				<img
+					class="movie__img-poster flex-shrink-0 rounded-lg shadow mr-4"
+					src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+					alt="Happy Console Gamer: The Movie"
+					width="200"
+					height="250"
+				/>
+
+				<div class="movie__info">
+					<h3 class="movie__title h2">Avengers: Endgame</h3>
+					<p class="movie__imdbId">
+						ImdbID:
+						<span class="movie__imdbId-inner text-info">tt4154796</span>
+					</p>
+					<p class="movie__type">
+						Type:
+						<span class="movie__type-inner text-info">movie</span>
+					</p>
+					<p class="movie__released-year">
+						Released year:
+						<span class="movie__released-year-inner text-info">2012</span>
+					</p>
+				</div>
+				<!-- movie__info -->
+			</div>
+			<!-- movie -->
+		</template>
+
+		<!-- Pagination item -->
+		<template class="pagination__item-template">
+			<li class="page-item">
+				<a class="page-link" href="#" data--id="1">1</a>
+			</li>
+		</template>
+
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
 </html>
