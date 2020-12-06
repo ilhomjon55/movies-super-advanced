@@ -81,7 +81,6 @@ let onElFormSearchSubmit = evt => {
       return response.json()
    }).then(data => {
 
-      console.log(data)
       foundMovies = data.Search
 
       renderMoviesTitle(foundMovies)
@@ -125,7 +124,6 @@ let onElListMoviesClick = evt => {
       })
 
       renderMovieInfo(clickedMovie)
-      console.log(clickedMovie)
    }
 }
 
@@ -139,22 +137,22 @@ let onElListPaginationClick = (evt) => {
    if (evt.target.matches('.page-link')) {
       let pageNumber = evt.target.dataset.Id
 
-      fetch(`https://omdbapi.com/?apikey=${API_KEY}&page=${pageNumber}&s=${inputSearch}`).then(response => {
+      fetch(`https://omdbapi.com/?apikey=${API_KEY}&page=${pageNumber}&s=${inputSearch}`)
+         .then(response => {
 
-         if (!response.ok) {
-            throw new Error(`Error ${response.status}: ${response.statusText}`)
-         }
+            if (!response.ok) {
+               throw new Error(`Error ${response.status}: ${response.statusText}`)
+            }
 
-         return response.json()
-      }).then(data => {
+            return response.json()
+         }).then(data => {
 
-         console.log(data)
-         foundMovies = data.Search
-         renderMoviesTitle(foundMovies)
+            foundMovies = data.Search
+            renderMoviesTitle(foundMovies)
 
-         renderPaginationItems(data.totalResults)
+            renderPaginationItems(data.totalResults)
 
-      })
+         })
    }
 }
 
